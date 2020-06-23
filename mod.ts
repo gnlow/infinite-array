@@ -1,4 +1,4 @@
-const infiniteArray = <T>(main: (index: number) => T) => 
+export default <T>(main: (index: number) => T) => 
     new Proxy({
         *[Symbol.iterator](){
             let index = 0
@@ -27,7 +27,3 @@ const infiniteArray = <T>(main: (index: number) => T) =>
             }
         }
     })
-
-const plant = infiniteArray(x => x*2)
-
-console.log(plant)
